@@ -21,9 +21,6 @@ const Footer = () => {
           <p className="text-sm">
             © 2025 All Rights Reserved
           </p>
-          <p className="text-sm mt-2 text-gray-500">
-            Prepared for CSC scholarship applications and university admissions
-          </p>
         </motion.div>
       </div>
     </footer>
