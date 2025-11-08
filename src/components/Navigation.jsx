@@ -48,10 +48,13 @@ const Navigation = () => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="text-xl font-bold text-primary"
+              className={`text-sm sm:text-lg md:text-xl font-bold transition-colors ${
+                isScrolled ? 'text-primary' : 'text-white'
+              }`}
               whileHover={{ scale: 1.05 }}
             >
-              Eliezer TIONON
+              <span className="hidden sm:inline">Wend-Panga Jedidja Eliezer TIONON</span>
+              <span className="sm:hidden">E. TIONON</span>
             </motion.a>
           </div>
 
@@ -66,7 +69,11 @@ const Navigation = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isScrolled
+                      ? 'text-gray-700 hover:text-primary'
+                      : 'text-white hover:text-blue-200'
+                  }`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -82,7 +89,9 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-primary focus:outline-none"
+              className={`focus:outline-none transition-colors ${
+                isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-blue-200'
+              }`}
             >
               <svg
                 className="h-6 w-6"
@@ -117,7 +126,9 @@ const Navigation = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white border-t"
+          className={`md:hidden border-t ${
+            isScrolled ? 'bg-white' : 'bg-white/95 backdrop-blur-md'
+          }`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
