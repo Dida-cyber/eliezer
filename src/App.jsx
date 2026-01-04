@@ -7,7 +7,6 @@ import Certifications from './components/Certifications';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import FloatingCVButton from './components/FloatingCVButton';
 
 function App() {
   useEffect(() => {
@@ -25,7 +24,6 @@ function App() {
       <Experience />
       <Contact />
       <Footer />
-      <FloatingCVButton />
     </div>
   );
 }

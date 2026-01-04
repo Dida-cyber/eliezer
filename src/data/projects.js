@@ -9,29 +9,29 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Real-time Server Attack Detection",
+    title: "Network_Traffic_Monitoring",
     objective: "Use ML to detect abnormal server behaviour and attacks.",
     tech: "Python, scikit-learn, anomaly detection, network logs parsing (Wireshark)",
     status: "Completed",
-    github: "https://github.com/yourgithub/ids-ml",
+    github: "https://github.com/Dida-cyber/Network_Traffic_Monitoring",
     category: "Machine Learning"
   },
   {
     id: 3,
-    title: "Flower Classification (CV)",
+    title: "Flower_Classifier",
     objective: "Classify flower species using CNNs.",
     tech: "Keras, TensorFlow, data augmentation",
     status: "Completed",
-    github: "https://github.com/yourgithub/flower-classifier",
+    github: "https://github.com/Dida-cyber/Flower_Classifier",
     category: "Computer Vision"
   },
   {
     id: 4,
-    title: "Agricultural Crop Prediction",
+    title: "crop_recommendation",
     objective: "Recommend crop types based on soil and climate features.",
     tech: "Python, pandas, scikit-learn, feature engineering",
     status: "Completed",
-    github: "https://github.com/yourgithub/agri-predict",
+    github: "https://github.com/Dida-cyber/crop_recommendation",
     category: "Data Science"
   },
   {

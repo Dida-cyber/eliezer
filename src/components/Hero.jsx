@@ -110,11 +110,12 @@ const Hero = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  {/* Placeholder for photo - Replace with your actual photo */}
+                  {/* User profile photo (local upload) */}
                   <img
-                    src="/profile-photo.jpg"
+                    src="/images/profil/profil.jpeg"
                     alt={personalInfo.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       if (e.target.nextElementSibling) {

@@ -63,7 +63,7 @@ const About = () => {
                 <p className="text-lg leading-relaxed text-gray-700">
                   <strong className="text-primary text-xl">🎯 Objective:</strong>
                   <span className="block mt-2">Pursue a Bachelor in Data Science / AI in
-                  China and contribute to technology development in Burkina Faso.</span>
+                  Hungary and contribute to technology development in Burkina Faso.</span>
                 </p>
               </div>
             </motion.div>
