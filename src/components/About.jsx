@@ -64,13 +64,7 @@ const About = () => {
                 I enjoy transforming raw data into meaningful insights and developing intelligent systems that address real-world challenges, 
                 particularly in developing contexts. I also have hands-on experience in networking, Linux and Windows environments, and data processing.
               </p>
-              <div className="p-6 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-2xl border border-primary/10">
-                <p className="text-lg leading-relaxed text-gray-700">
-                  <strong className="text-primary text-xl">🎯 Objective:</strong>
-                  <span className="block mt-2">Pursue a Bachelor in Data Science / AI in
-                  Hungary and contribute to technology development in Burkina Faso.</span>
-                </p>
-              </div>
+
             </motion.div>
 
             <motion.div
