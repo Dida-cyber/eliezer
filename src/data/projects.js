@@ -142,6 +142,10 @@ export const skills = [
   "NumPy",
   "TensorFlow / PyTorch",
   "OpenCV",
+  "HTML/CSS",
+  "Networking",
+  "Linux",
+  "Windows",
   "Cisco Packet Tracer",
   "Wireshark",
   "SQL / MySQL"
