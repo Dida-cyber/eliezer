@@ -56,13 +56,13 @@ const About = () => {
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-light">
-                I am a technology enthusiast passionate about <span className="font-semibold text-blue-600">Data Science, Machine Learning, and applied AI</span>. 
-                I have academic training in computer networks and telecommunications, as well as experience working on data-related and AI projects.
+                I am a technology enthusiast passionate about <span className="font-semibold text-blue-600">Data Science, Networking, Machine Learning, and applied AI</span>. 
+                I have academic training in computer networks and telecommunications, as well as experience on data-related and AI projects.
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-light">
-                I enjoy transforming raw data into meaningful insights and developing intelligent systems that address real-world challenges, 
-                particularly in developing contexts. I also have hands-on experience in networking, Linux and Windows environments, and data processing.
+                I enjoy transforming raw data into meaningful insights and developing intelligent systems that address real-world challenges
+                . I also have hands-on experience in networking, Linux and Windows environments, and data processing.
               </p>
 
             </motion.div>

@@ -50,6 +50,22 @@ export const projects = [
     tech: "Python, Pandas, Matplotlib",
     status: "Completed",
     category: "Data Science"
+  },
+  {
+    id: 7,
+    title: "Signal Processing & Visualization",
+    objective: "Basic signal visualization and analysis using MATLAB (time-domain and frequency-domain representations).",
+    tech: "MATLAB",
+    status: "Completed",
+    category: "Signal Processing"
+  },
+  {
+    id: 8,
+    title: "Signal Simulation & Analysis",
+    objective: "Signal simulation and coverage analysis using Radio Mobile.",
+    tech: "Radio Mobile",
+    status: "Completed",
+    category: "Signal Processing"
   }
 ];
 
@@ -138,10 +154,6 @@ export const experience = [
 
 export const skills = [
   "Python",
-  "Pandas",
-  "NumPy",
-  "TensorFlow / PyTorch",
-  "OpenCV",
   "HTML/CSS",
   "Networking",
   "Linux",
