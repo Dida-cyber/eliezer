@@ -66,6 +66,22 @@ export const projects = [
     tech: "Radio Mobile",
     status: "Completed",
     category: "Signal Processing"
+  },
+  {
+    id: 9,
+    title: "Linux Network Administration Project (Rocky Linux Server & Ubuntu Client)",
+    objective: "Academic project focused on basic Linux network administration using one Rocky Linux server and one Ubuntu client. The project involved configuring network settings, managing users and permissions, and ensuring reliable communication in a simple client–server environment.",
+    tech: "Rocky Linux, Ubuntu, Linux Network Administration",
+    status: "Completed",
+    category: "Networking"
+  },
+  {
+    id: 10,
+    title: "Windows Network Administration Project",
+    objective: "Academic project focused on basic Windows Server administration using two servers running Windows Server 2022 and Windows Server 2025, and two client machines running Windows 10 and Windows 11. The project involved basic user and group management, configuration of network services, and administration of a client–server environment.",
+    tech: "Windows Server 2022, Windows Server 2025, Windows 10, Windows 11",
+    status: "Completed",
+    category: "Networking"
   }
 ];
 
@@ -160,7 +176,9 @@ export const skills = [
   "Windows",
   "Cisco Packet Tracer",
   "Wireshark",
-  "SQL / MySQL"
+  "SQL / MySQL",
+  "Computer Systems",
+  "Information Technology Management"
 ];
 
 export const personalInfo = {
