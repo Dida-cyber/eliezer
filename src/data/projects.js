@@ -1,4 +1,4 @@
-export const projects = [
+export const personalProjects = [
   {
     id: 1,
     title: "AI Weapon Detection for Surveillance",
@@ -36,6 +36,25 @@ export const projects = [
   },
   {
     id: 5,
+    title: "Data Science Mini Project",
+    objective: "Cleaning and visualization of a real dataset using Python (Pandas, Matplotlib).",
+    tech: "Python, Pandas, Matplotlib",
+    status: "Completed",
+    category: "Data Science"
+  },
+  {
+    id: 6,
+    title: "Medical chatbot",
+    objective: "AI-powered chatbot for medical consultations and health information.",
+    tech: "Python, Natural Language Processing, Machine Learning",
+    status: "Completed",
+    category: "Artificial Intelligence"
+  }
+];
+
+export const projects = [
+  {
+    id: 1,
     title: "Network Simulation (Packet Tracer)",
     objective: "Design and simulate a LAN with routing, VLANs and basic security.",
     tech: "Cisco Packet Tracer",
@@ -44,15 +63,7 @@ export const projects = [
     category: "Networking"
   },
   {
-    id: 6,
-    title: "Data Science Mini Project",
-    objective: "Cleaning and visualization of a real dataset using Python (Pandas, Matplotlib).",
-    tech: "Python, Pandas, Matplotlib",
-    status: "Completed",
-    category: "Data Science"
-  },
-  {
-    id: 7,
+    id: 2,
     title: "Signal Processing & Visualization",
     objective: "Basic signal visualization and analysis using MATLAB (time-domain and frequency-domain representations).",
     tech: "MATLAB",
@@ -60,7 +71,7 @@ export const projects = [
     category: "Signal Processing"
   },
   {
-    id: 8,
+    id: 3,
     title: "Signal Simulation & Analysis",
     objective: "Signal simulation and coverage analysis using Radio Mobile.",
     tech: "Radio Mobile",
@@ -68,7 +79,7 @@ export const projects = [
     category: "Signal Processing"
   },
   {
-    id: 9,
+    id: 4,
     title: "Linux Network Administration Project (Rocky Linux Server & Ubuntu Client)",
     objective: "Academic project focused on basic Linux network administration using one Rocky Linux server and one Ubuntu client. The project involved configuring network settings, managing users and permissions, and ensuring reliable communication in a simple client–server environment.",
     tech: "Rocky Linux, Ubuntu, Linux Network Administration",
@@ -76,7 +87,7 @@ export const projects = [
     category: "Networking"
   },
   {
-    id: 10,
+    id: 5,
     title: "Windows Network Administration Project",
     objective: "Academic project focused on basic Windows Server administration using two servers running Windows Server 2022 and Windows Server 2025, and two client machines running Windows 10 and Windows 11. The project involved basic user and group management, configuration of network services, and administration of a client–server environment.",
     tech: "Windows Server 2022, Windows Server 2025, Windows 10, Windows 11",
@@ -146,6 +157,13 @@ export const experience = [
       "Under the patronage of Dr. Drissa Sawadogo, Special Advisor to the President of Burkina Faso, Director General of SOTRACO",
       "In partnership with the Ministry of Health",
       "In partnership with the CIL (Commission on Information Technology and Liberties)"
+    ]
+  },
+  {
+    title: "Secretary General",
+    organization: "ESTA Computer Science Club",
+    details: [
+      "Higher School of Advanced Technologies (ESTA), Ouagadougou in Burkina Faso"
     ]
   },
   {

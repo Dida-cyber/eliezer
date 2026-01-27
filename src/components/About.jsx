@@ -56,7 +56,7 @@ const About = () => {
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-light">
-                I am a technology enthusiast passionate about <span className="font-semibold text-blue-600">Data Science, Networking, Machine Learning, and applied AI</span>. 
+                I am a technology enthusiast and self-taught, passionate about <span className="font-semibold text-blue-600">Data Science, Networking, Machine Learning, and applied AI</span>. 
                 I have academic training in computer networks and telecommunications, as well as experience on data-related and AI projects.
               </p>
 
