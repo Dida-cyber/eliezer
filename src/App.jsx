@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App min-h-screen overflow-x-hidden">
       <Navigation />
       <Hero />
       <About />

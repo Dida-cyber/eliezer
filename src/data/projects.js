@@ -201,7 +201,7 @@ export const skills = [
 
 export const personalInfo = {
   name: "Wend-Panga Jedidja Eliezer TIONON",
-  title: "Student — Networks & Telecommunications | Aspiring Data Scientist & AI Engineer",
+  title: "Networks & Telecommunications Engineering Student | Applied Machine Learning & AI",
   email: "eliezertionon88@gmail.com",
   github: "https://github.com/Dida-cyber",
   cv: "Eliezer_TIONON_CV.pdf",

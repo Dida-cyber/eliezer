@@ -3,9 +3,9 @@ import { personalInfo } from '../data/projects';
 
 const Contact = () => {
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
       {/* Premium gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-700 via-purple-600 to-blue-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-950">
         <div 
           className="absolute inset-0 opacity-20"
           style={{
@@ -18,24 +18,24 @@ const Contact = () => {
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3 sm:mb-4">
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-white/30 mx-auto rounded-full mb-4"></div>
-          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-blue-100 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
             Let's connect and collaborate on exciting projects. I'm always open to discussing new opportunities.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
           {/* Email Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -43,7 +43,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl"
+            className="bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-white/25 shadow-glow hover:bg-white/15 hover:border-white/30 transition-all duration-300 min-h-[140px] flex flex-col items-center justify-center"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6 mx-auto">
               <svg
@@ -75,7 +75,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl"
+            className="bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-white/25 shadow-glow hover:bg-white/15 hover:border-white/30 transition-all duration-300 min-h-[140px] flex flex-col items-center justify-center"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6 mx-auto">
               <svg

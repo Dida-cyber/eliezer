@@ -51,17 +51,17 @@ const Hero = () => {
   }, []);
 
   const particles = useMemo(
-    () => Array.from({ length: 30 }, (_, i) => i),
-    []
+    () => Array.from({ length: typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 30 }, (_, i) => i),
+    [dimensions.width]
   );
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] min-h-screen flex items-center justify-center overflow-hidden py-20 sm:py-24 pt-24 sm:pt-28"
     >
       {/* Premium Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-700 via-purple-600 to-blue-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-950">
         <div 
           className="absolute inset-0 opacity-20"
           style={{
@@ -87,8 +87,8 @@ const Hero = () => {
       <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left side - Photo and content */}
           <motion.div
             className="text-center lg:text-left"
@@ -98,7 +98,7 @@ const Hero = () => {
           >
             {/* Photo Section */}
             <motion.div
-              className="mb-8 flex justify-center lg:justify-start"
+              className="mb-6 sm:mb-8 flex justify-center lg:justify-start"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -106,7 +106,7 @@ const Hero = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-50 animate-pulse"></div>
                 <motion.div
-                  className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl"
+                  className="relative w-36 h-36 xs:w-44 xs:h-44 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white/40 shadow-2xl shadow-black/20 ring-2 sm:ring-4 ring-white/10"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
@@ -131,7 +131,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 sm:mb-4 leading-tight break-words"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -147,20 +147,20 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <span className="inline-block px-4 py-2 sm:px-5 sm:py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/25 shadow-inner-glow font-medium tracking-wide text-base sm:text-lg md:text-xl lg:text-2xl text-center max-w-full">
                 {personalInfo.title}
               </span>
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full border border-white/20 hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2"
+                className="px-4 py-3 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/25 hover:bg-white/20 hover:border-white/40 transition-all duration-300 inline-flex items-center justify-center gap-2 font-medium text-sm sm:text-base min-h-[44px] w-full sm:w-auto"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -173,7 +173,7 @@ const Hero = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-white/10 backdrop-blur-md text-white rounded-full border border-white/20 hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2"
+                className="px-4 py-3 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/25 hover:bg-white/20 hover:border-white/40 transition-all duration-300 inline-flex items-center justify-center gap-2 font-medium text-sm sm:text-base min-h-[44px] w-full sm:w-auto"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -192,31 +192,31 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.div
-              className="w-64 h-64 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8"
-              animate={{ 
-                rotate: [0, 5, -5, 0],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{ 
-                duration: 10,
-                repeat: Infinity,
-                repeatType: 'reverse'
-              }}
-            >
-              <div className="text-white text-center">
-                <div className="text-6xl mb-4">🚀</div>
-                <h3 className="text-2xl font-bold mb-2">Innovation</h3>
-                <p className="text-blue-100">Building the future with AI & Data Science</p>
-              </div>
-            </motion.div>
+<motion.div
+            className="w-72 h-72 bg-white/[0.07] backdrop-blur-xl rounded-3xl border border-white/20 p-8 shadow-glow"
+            animate={{ 
+              rotate: [0, 3, -3, 0],
+              scale: [1, 1.03, 1]
+            }}
+            transition={{ 
+              duration: 12,
+              repeat: Infinity,
+              repeatType: 'reverse'
+            }}
+          >
+            <div className="text-white text-center">
+              <div className="text-7xl mb-5">✨</div>
+              <h3 className="text-2xl font-bold mb-2 tracking-tight">Innovation</h3>
+              <p className="text-blue-100/90 font-light">Building the future with AI & Data Science</p>
+            </div>
+          </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{
@@ -225,7 +225,7 @@ const Hero = () => {
         }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-white/70 text-sm">Scroll</span>
+          <span className="text-white/60 text-xs font-medium tracking-widest uppercase">Scroll</span>
           <svg
             className="w-6 h-6 text-white"
             fill="none"

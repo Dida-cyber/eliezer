@@ -18,12 +18,12 @@ const About = () => {
   };
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
       
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -31,11 +31,11 @@ const About = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
             variants={itemVariants}
           >
             <motion.h2
-              className="text-4xl md:text-5xl font-extrabold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4"
               variants={itemVariants}
             >
               <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -45,22 +45,22 @@ const About = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid md:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start md:items-center mb-12 sm:mb-16">
             <motion.div 
               className="space-y-6"
               variants={itemVariants}
             >
-              <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-light">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light">
                 I am an <span className="font-semibold text-primary">engineering student</span> in Networks and Telecommunications 
                 at the Higher School of Advanced Technology (ESTA), Ouagadougou, Burkina Faso.
               </p>
 
-              <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-light">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light">
                 I am a technology enthusiast and self-taught, passionate about <span className="font-semibold text-blue-600">Data Science, Networking, Machine Learning, and applied AI</span>. 
                 I have academic training in computer networks and telecommunications, as well as experience on data-related and AI projects.
               </p>
 
-              <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-light">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light">
                 I enjoy transforming raw data into meaningful insights and developing intelligent systems that address real-world challenges
                 . I also have hands-on experience in networking, Linux and Windows environments, and data processing.
               </p>
@@ -72,7 +72,7 @@ const About = () => {
               variants={itemVariants}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-3xl blur-2xl opacity-20"></div>
-              <div className="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+              <div className="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card border border-slate-100 hover:shadow-card-hover transition-shadow duration-300">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                   What I Do
                 </h3>
@@ -113,23 +113,18 @@ const About = () => {
             className="mt-16"
             variants={itemVariants}
           >
-            <h3 className="text-3xl font-bold text-center mb-10">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                 Key Skills & Tools
               </span>
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
               {skills.map((skill, index) => (
                 <motion.span
                   key={skill}
-                  className="px-6 py-3 bg-gradient-to-r from-white to-gray-50 text-gray-800 rounded-full text-sm font-semibold border-2 border-gray-200 hover:border-primary shadow-md hover:shadow-lg transition-all duration-300"
+                  className="px-4 py-2 sm:px-5 sm:py-2.5 bg-white text-slate-700 rounded-full text-xs sm:text-sm font-medium border border-slate-200/80 hover:border-primary/50 hover:bg-primary/5 shadow-sm hover:shadow-card transition-all duration-300"
                   variants={itemVariants}
-                  whileHover={{ 
-                    scale: 1.1, 
-                    backgroundColor: '#eef6ff',
-                    borderColor: '#1c6dd0',
-                    y: -3
-                  }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   {skill}

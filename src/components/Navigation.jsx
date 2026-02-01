@@ -15,6 +15,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
@@ -35,12 +36,12 @@ const Navigation = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          ? 'bg-white/90 backdrop-blur-xl shadow-card'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+        <div className="flex justify-between items-center h-14 sm:h-16 min-h-[56px]">
           <div className="flex-shrink-0">
             <motion.a
               href="#home"
@@ -53,14 +54,14 @@ const Navigation = () => {
               }`}
               whileHover={{ scale: 1.05 }}
             >
-              <span className="hidden sm:inline">Wend-Panga Jedidja Eliezer TIONON</span>
-              <span className="sm:hidden">Wend-Panga Jedidja Eliezer TIONON</span>
+              <span className="hidden md:inline">Wend-Panga Jedidja Eliezer TIONON</span>
+              <span className="md:hidden text-sm truncate max-w-[160px] sm:max-w-[200px]">Eliezer TIONON</span>
             </motion.a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-4 lg:ml-10 flex items-baseline flex-wrap gap-1 sm:gap-2">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
@@ -69,10 +70,10 @@ const Navigation = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isScrolled
-                      ? 'text-gray-700 hover:text-primary'
-                      : 'text-white hover:text-blue-200'
+                      ? 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                      : 'text-white/90 hover:text-white hover:bg-white/10'
                   }`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -86,11 +87,12 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex-shrink-0">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`focus:outline-none transition-colors ${
-                isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-blue-200'
+              aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              className={`p-3 -m-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 transition-colors ${
+                isScrolled ? 'text-gray-700 hover:text-primary hover:bg-primary/5' : 'text-white hover:bg-white/10'
               }`}
             >
               <svg
@@ -126,11 +128,12 @@ const Navigation = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
           className={`md:hidden border-t ${
-            isScrolled ? 'bg-white' : 'bg-white/95 backdrop-blur-md'
+            isScrolled ? 'bg-white/98 backdrop-blur-xl' : 'bg-slate-900/95 backdrop-blur-xl border-white/10'
           }`}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-3 pt-2 pb-4 space-y-1 safe-area-padding">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -139,7 +142,11 @@ const Navigation = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                className={`block px-4 py-3.5 rounded-xl text-base font-medium min-h-[48px] flex items-center transition-colors ${
+                  isScrolled 
+                    ? 'text-gray-700 hover:text-primary hover:bg-primary/5' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {item.name}
               </a>

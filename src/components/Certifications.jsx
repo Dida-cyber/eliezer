@@ -33,27 +33,38 @@ const Certifications = () => {
   const closeLightbox = () => setLightbox({ open: false, src: '', alt: '' });
 
   return (
-    <section id="certifications" className="relative py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section id="certifications" className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-100/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14 sm:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 mb-6 ring-2 ring-primary/20">
+            <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
             <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent">
               Certifications
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Certification obtained during my career
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/60"></div>
+            <div className="w-2 h-2 rounded-full bg-primary/80"></div>
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-r from-primary/60 to-purple-500/60"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-500/80"></div>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-purple-500/60"></div>
+          </div>
+          <p className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto font-light">
+            Certifications obtained during my career
           </p>
         </motion.div>
 
@@ -71,19 +82,20 @@ const Certifications = () => {
             <motion.div
               key={cert.id}
               variants={itemVariants}
-              className="group relative bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-500 overflow-hidden"
-              whileHover={{ y: -5, scale: 1.02 }}
+              className="group relative bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-card border border-slate-200/60 hover:shadow-card-hover hover:shadow-primary/5 hover:border-primary/20 transition-all duration-500 overflow-hidden"
+              whileHover={{ y: -6, scale: 1.02 }}
             >
-              {/* Gradient overlay */}
-              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${categoryColors[cert.category] || 'from-primary to-purple-600'}`}></div>
-              
-              {/* Hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Gradient accent bar - thicker */}
+              <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${categoryColors[cert.category] || 'from-primary to-purple-600'} rounded-t-2xl`}></div>
+              {/* Corner glow on hover */}
+              <div className="absolute -top-16 -right-16 w-32 h-32 bg-primary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10">
                 <div className="flex items-start gap-4 mb-4">
                   {/* Image de la certification */}
-                  <div className="flex-shrink-0 w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg border border-gray-200 overflow-hidden">
+                  <div className="flex-shrink-0 w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner border border-slate-100 overflow-hidden ring-1 ring-slate-200/50 group-hover:ring-primary/20 transition-all duration-300">
                     <img 
                       src={imageSrc} 
                       alt={cert.issuer}
@@ -98,33 +110,34 @@ const Certifications = () => {
                       }}
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-gray-900 text-lg font-bold mb-1">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-slate-800 text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                       {cert.issuer}
                     </h3>
-                    <span className={`inline-block px-3 py-1 bg-gradient-to-r ${categoryColors[cert.category] || 'from-primary to-blue-600'} text-white text-xs font-semibold rounded-full`}>
+                    <span className={`inline-flex px-3 py-1.5 bg-gradient-to-r ${categoryColors[cert.category] || 'from-primary to-blue-600'} text-white text-xs font-semibold rounded-full shadow-sm`}>
                       {cert.category}
                     </span>
                   </div>
                 </div>
                 
                 {/* Certifications list */}
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {cert.certsList.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-700">
-                      <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2" style={{backgroundColor: 'currentColor'}}></span>
-                      <span className="text-sm md:text-base">{item}</span>
+                    <li key={idx} className="flex items-start gap-2.5 text-slate-600">
+                      <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-primary/70"></span>
+                      <span className="text-sm md:text-base leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Bouton pour voir l'image en grand */}
                 {cert.image && (
-                  <div className="mt-4 text-right">
+                  <div className="mt-5 pt-4 border-t border-slate-100">
                     <button
                       onClick={() => openLightbox(imageSrc, cert.issuer)}
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] bg-gradient-to-r from-primary to-accent hover:from-primaryDark hover:to-accent text-white rounded-xl font-medium shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 hover:scale-[1.02]"
                     >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                       View certificate
                     </button>
                   </div>
@@ -135,8 +148,14 @@ const Certifications = () => {
           })}
         </motion.div>
         {lightbox.open && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60" onClick={closeLightbox}>
-            <div className="max-w-3xl w-full p-4" onClick={(e) => e.stopPropagation()}>
+          <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" 
+          onClick={closeLightbox}
+        >
+            <div className="max-w-3xl w-full p-3 sm:p-4 mx-4 sm:mx-0 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">
                 <div className="flex justify-end p-2">
                   <button onClick={closeLightbox} className="text-gray-600 hover:text-gray-900">✕</button>
@@ -146,7 +165,7 @@ const Certifications = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>
