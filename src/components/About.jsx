@@ -50,17 +50,17 @@ const About = () => {
               className="space-y-6"
               variants={itemVariants}
             >
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light break-words">
+              <p className="text-base xs:text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light break-words">
                 I am an <span className="font-semibold text-primary">engineering student</span> in Networks and Telecommunications 
                 at the Higher School of Advanced Technology (ESTA), Ouagadougou, Burkina Faso.
               </p>
 
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light break-words">
+              <p className="text-base xs:text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light break-words">
                 I am a technology enthusiast and self-taught, passionate about <span className="font-semibold text-blue-600">Data Science, Networking, Machine Learning, and applied AI</span>. 
                 I have academic training in computer networks and telecommunications, as well as experience on data-related and AI projects.
               </p>
 
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light break-words">
+              <p className="text-base xs:text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700 font-light break-words">
                 I enjoy transforming raw data into meaningful insights and developing intelligent systems that address real-world challenges
                 . I also have hands-on experience in networking, Linux and Windows environments, and data processing.
               </p>
@@ -73,7 +73,7 @@ const About = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-3xl blur-2xl opacity-20"></div>
               <div className="relative bg-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-card border border-slate-100 hover:shadow-card-hover transition-shadow duration-300">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
+                <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
                   What I Do
                 </h3>
                 <div className="space-y-4">
@@ -82,8 +82,8 @@ const About = () => {
                       <span className="text-2xl">🤖</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-1">AI & Machine Learning</h4>
-                      <p className="text-gray-600 text-sm">Building intelligent systems and models</p>
+                      <h4 className="font-semibold text-gray-800 mb-1 text-sm xs:text-base sm:text-lg">AI & Machine Learning</h4>
+                      <p className="text-gray-600 text-xs xs:text-sm sm:text-base">Building intelligent systems and models</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -91,8 +91,8 @@ const About = () => {
                       <span className="text-2xl">📊</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-1">Data Science</h4>
-                      <p className="text-gray-600 text-sm">Analyzing and visualizing complex data</p>
+                      <h4 className="font-semibold text-gray-800 mb-1 text-sm xs:text-base sm:text-lg">Data Science</h4>
+                      <p className="text-gray-600 text-xs xs:text-sm sm:text-base">Analyzing and visualizing complex data</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -100,8 +100,8 @@ const About = () => {
                       <span className="text-2xl">🌐</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-1">Networking</h4>
-                      <p className="text-gray-600 text-sm">Designing and managing network infrastructure</p>
+                      <h4 className="font-semibold text-gray-800 mb-1 text-sm xs:text-base sm:text-lg">Networking</h4>
+                      <p className="text-gray-600 text-xs xs:text-sm sm:text-base">Designing and managing network infrastructure</p>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const About = () => {
             className="mt-16"
             variants={itemVariants}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">
+            <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10">
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                 Key Skills & Tools
               </span>
@@ -122,7 +122,7 @@ const About = () => {
               {skills.map((skill, index) => (
                 <motion.span
                   key={skill}
-                  className="px-4 py-2 sm:px-5 sm:py-2.5 bg-white text-slate-700 rounded-full text-xs sm:text-sm font-medium border border-slate-200/80 hover:border-primary/50 hover:bg-primary/5 shadow-sm hover:shadow-card transition-all duration-300"
+                  className="px-4 py-2 sm:px-5 sm:py-2.5 bg-white text-slate-700 rounded-full text-xs xs:text-sm sm:text-base font-medium border border-slate-200/80 hover:border-primary/50 hover:bg-primary/5 shadow-sm hover:shadow-card transition-all duration-300"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -2 }}
                   transition={{ type: 'spring', stiffness: 300 }}
