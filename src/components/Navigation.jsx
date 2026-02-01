@@ -34,28 +34,29 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-area-top ${
         isScrolled
           ? 'bg-white/90 backdrop-blur-xl shadow-card'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 safe-area-padding">
         <div className="flex justify-between items-center h-14 sm:h-16 min-h-[56px]">
-          <div className="flex-shrink-0">
+          <div className="flex-1 min-w-0 mr-2 overflow-hidden md:flex-initial md:mr-0">
             <motion.a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className={`text-sm sm:text-lg md:text-xl font-bold transition-colors ${
+              className={`font-bold transition-colors block min-w-0 ${
                 isScrolled ? 'text-primary' : 'text-white'
               }`}
               whileHover={{ scale: 1.05 }}
             >
-              <span className="hidden md:inline">Wend-Panga Jedidja Eliezer TIONON</span>
-              <span className="md:hidden text-sm truncate max-w-[160px] sm:max-w-[200px]">Eliezer TIONON</span>
+              <span className="text-[10px] xs:text-xs sm:text-sm md:text-lg lg:text-xl leading-tight break-words md:whitespace-nowrap">
+                Wend-Panga Jedidja Eliezer TIONON
+              </span>
             </motion.a>
           </div>
 

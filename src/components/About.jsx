@@ -23,7 +23,7 @@ const About = () => {
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
       
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+      <div className="relative max-w-6xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 safe-area-padding">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -45,22 +45,22 @@ const About = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start md:items-center mb-12 sm:mb-16">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start md:items-center mb-10 sm:mb-16">
             <motion.div 
               className="space-y-6"
               variants={itemVariants}
             >
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light">
+              <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light break-words">
                 I am an <span className="font-semibold text-primary">engineering student</span> in Networks and Telecommunications 
                 at the Higher School of Advanced Technology (ESTA), Ouagadougou, Burkina Faso.
               </p>
 
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light">
+              <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light break-words">
                 I am a technology enthusiast and self-taught, passionate about <span className="font-semibold text-blue-600">Data Science, Networking, Machine Learning, and applied AI</span>. 
                 I have academic training in computer networks and telecommunications, as well as experience on data-related and AI projects.
               </p>
 
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light">
+              <p className="text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 font-light break-words">
                 I enjoy transforming raw data into meaningful insights and developing intelligent systems that address real-world challenges
                 . I also have hands-on experience in networking, Linux and Windows environments, and data processing.
               </p>
@@ -72,8 +72,8 @@ const About = () => {
               variants={itemVariants}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-3xl blur-2xl opacity-20"></div>
-              <div className="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card border border-slate-100 hover:shadow-card-hover transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              <div className="relative bg-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-card border border-slate-100 hover:shadow-card-hover transition-shadow duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
                   What I Do
                 </h3>
                 <div className="space-y-4">
@@ -118,7 +118,7 @@ const About = () => {
                 Key Skills & Tools
               </span>
             </h3>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 px-1">
               {skills.map((skill, index) => (
                 <motion.span
                   key={skill}

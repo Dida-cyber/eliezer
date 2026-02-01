@@ -23,7 +23,7 @@ const Experience = () => {
       <div className="absolute top-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+      <div className="relative max-w-5xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 safe-area-padding min-w-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,10 +55,10 @@ const Experience = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-6 sm:left-7 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-blue-600 to-purple-600 transform md:-translate-x-1/2"></div>
+          <div className="absolute left-5 sm:left-7 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-blue-600 to-purple-600 transform md:-translate-x-1/2"></div>
 
           <motion.div
-            className="space-y-12"
+            className="space-y-8 sm:space-y-12"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -68,16 +68,16 @@ const Experience = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative pl-16 sm:pl-20 md:pl-0 md:flex md:items-center md:gap-8"
+                className="relative pl-14 sm:pl-20 md:pl-0 md:flex md:items-center md:gap-8"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-6 sm:left-7 md:left-1/2 w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-primary to-blue-600 rounded-full border-2 sm:border-4 border-white shadow-lg shadow-blue-500/20 transform md:-translate-x-1/2 z-10 ring-2 ring-primary/20"></div>
+                <div className="absolute left-5 sm:left-7 md:left-1/2 w-3.5 h-3.5 sm:w-5 sm:h-5 bg-gradient-to-br from-primary to-blue-600 rounded-full border-2 sm:border-4 border-white shadow-lg shadow-blue-500/20 transform md:-translate-x-1/2 z-10 ring-2 ring-primary/20"></div>
 
                 <motion.div
                   className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:ml-auto md:pl-8'}`}
                   whileHover={{ scale: 1.02, x: index % 2 === 0 ? -5 : 5 }}
                 >
-                  <div className="relative bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-card border border-slate-200/60 hover:shadow-card-hover hover:shadow-primary/5 hover:border-primary/20 transition-all duration-500 group overflow-hidden">
+                  <div className="relative bg-white p-4 xs:p-5 sm:p-6 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-card border border-slate-200/60 hover:shadow-card-hover hover:shadow-primary/5 hover:border-primary/20 transition-all duration-500 group overflow-hidden min-w-0">
                     {/* Gradient accent bar */}
                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-blue-500 to-purple-500 rounded-t-2xl sm:rounded-t-3xl"></div>
                     {/* Subtle corner glow */}
@@ -88,7 +88,7 @@ const Experience = () => {
                     <div className="relative z-10">
                       <div className="flex items-start gap-4 md:flex-col md:items-start md:gap-3">
                         <motion.div
-                          className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25"
+                          className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25"
                           whileHover={{ rotate: [0, -10, 10, 0], scale: 1.05 }}
                           transition={{ duration: 0.4 }}
                         >
@@ -112,9 +112,9 @@ const Experience = () => {
                             {exp.organization}
                           </p>
                           {exp.details && exp.details.length > 0 && (
-                              <ul className="mt-3 space-y-2.5 max-w-xl md:mx-auto">
+                              <ul className="mt-3 space-y-2 sm:space-y-2.5 max-w-xl md:mx-auto">
                                 {exp.details.map((detail, idx) => (
-                                  <li key={idx} className="flex items-start gap-2.5 text-slate-600 text-sm md:justify-center">
+                                  <li key={idx} className="flex items-start gap-2 sm:gap-2.5 text-slate-600 text-xs sm:text-sm md:justify-center break-words">
                                     <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-1.5"></span>
                                     <span className="leading-relaxed">{detail}</span>
                                   </li>

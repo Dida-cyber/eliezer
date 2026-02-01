@@ -58,7 +58,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] min-h-screen flex items-center justify-center overflow-hidden py-20 sm:py-24 pt-24 sm:pt-28"
+      className="relative min-h-[100dvh] min-h-screen flex items-center justify-center overflow-hidden py-16 sm:py-24 pt-20 sm:pt-28 pb-24"
     >
       {/* Premium Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-950">
@@ -82,12 +82,12 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Gradient orbs for depth */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      {/* Gradient orbs - reduced on mobile for performance */}
+      <div className="absolute top-10 left-4 w-40 h-40 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-15 sm:opacity-20 animate-blob pointer-events-none"></div>
+      <div className="absolute top-32 right-4 w-40 h-40 sm:w-72 sm:h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-15 sm:opacity-20 animate-blob animation-delay-2000 pointer-events-none"></div>
+      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-48 sm:w-72 sm:h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-15 sm:opacity-20 animate-blob animation-delay-4000 pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 w-full min-w-0">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left side - Photo and content */}
           <motion.div
@@ -131,7 +131,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 sm:mb-4 leading-tight break-words"
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 sm:mb-4 leading-tight break-words"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -147,7 +147,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-2 sm:px-5 sm:py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/25 shadow-inner-glow font-medium tracking-wide text-base sm:text-lg md:text-xl lg:text-2xl text-center max-w-full">
+              <span className="inline-block px-3 py-2 xs:px-4 sm:px-5 sm:py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/25 shadow-inner-glow font-medium tracking-wide text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-full break-words hyphens-auto">
                 {personalInfo.title}
               </span>
             </motion.div>
@@ -160,7 +160,7 @@ const Hero = () => {
             >
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="px-4 py-3 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/25 hover:bg-white/20 hover:border-white/40 transition-all duration-300 inline-flex items-center justify-center gap-2 font-medium text-sm sm:text-base min-h-[44px] w-full sm:w-auto"
+                className="px-4 py-3 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/25 hover:bg-white/20 hover:border-white/40 transition-all duration-300 inline-flex items-center justify-center gap-2 font-medium text-xs xs:text-sm sm:text-base min-h-[44px] w-full sm:w-auto min-w-0 break-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -173,7 +173,7 @@ const Hero = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/25 hover:bg-white/20 hover:border-white/40 transition-all duration-300 inline-flex items-center justify-center gap-2 font-medium text-sm sm:text-base min-h-[44px] w-full sm:w-auto"
+                className="px-4 py-3 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/25 hover:bg-white/20 hover:border-white/40 transition-all duration-300 inline-flex items-center justify-center gap-2 font-medium text-xs xs:text-sm sm:text-base min-h-[44px] w-full sm:w-auto shrink-0"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

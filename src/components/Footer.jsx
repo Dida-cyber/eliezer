@@ -4,7 +4,7 @@ import { personalInfo } from '../data/projects';
 const Footer = () => {
   return (
     <footer className="bg-slate-950 text-slate-400 py-8 sm:py-10 lg:py-12 border-t border-slate-800/50 safe-area-padding">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

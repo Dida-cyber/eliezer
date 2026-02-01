@@ -20,7 +20,7 @@ const Projects = () => {
   const ProjectCard = ({ project }) => (
     <motion.div
       variants={cardVariants}
-      className="group relative bg-white border border-slate-200/60 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-card hover:shadow-card-hover hover:shadow-primary/5 hover:border-primary/20 transition-all duration-500 overflow-hidden"
+      className="group relative bg-white border border-slate-200/60 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 xs:p-5 sm:p-6 shadow-card hover:shadow-card-hover hover:shadow-primary/5 hover:border-primary/20 transition-all duration-500 overflow-hidden min-w-0"
       whileHover={{ y: -8, scale: 1.02 }}
     >
       {/* Top gradient accent - subtle by default, full on hover */}
@@ -42,10 +42,10 @@ const Projects = () => {
         <p className="text-slate-600 text-sm mb-3 leading-relaxed">
           <em className="text-primary font-medium not-italic">Objective:</em> {project.objective}
         </p>
-        <div className="mb-4 p-3.5 bg-slate-50/80 rounded-xl border border-slate-100 overflow-x-auto">
-          <p className="text-slate-700 text-sm">
+        <div className="mb-4 p-3 sm:p-3.5 bg-slate-50/80 rounded-lg sm:rounded-xl border border-slate-100 overflow-x-auto min-w-0">
+          <p className="text-slate-700 text-xs sm:text-sm break-words">
             <strong className="text-slate-800">Tech Stack:</strong> 
-            <span className="ml-2 text-slate-600">{project.tech}</span>
+            <span className="ml-1 sm:ml-2 text-slate-600 break-words">{project.tech}</span>
           </p>
         </div>
         {project.status && (
@@ -93,7 +93,7 @@ const Projects = () => {
       {/* Decorative background */}
       <div className="absolute top-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-100/30 rounded-full blur-3xl"></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+      <div className="relative max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 safe-area-padding min-w-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,13 +124,13 @@ const Projects = () => {
         </motion.div>
 
         {/* Personal Projects Section */}
-        <div className="mb-20">
+        <div className="mb-12 sm:mb-16 md:mb-20">
           <motion.h3
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-slate-800"
+            className="flex flex-wrap items-center gap-2 sm:gap-3 text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-slate-800"
           >
             <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
@@ -140,7 +140,7 @@ const Projects = () => {
             </span>
           </motion.h3>
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -159,7 +159,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-slate-800"
+            className="flex flex-wrap items-center gap-2 sm:gap-3 text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-slate-800"
           >
             <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
@@ -169,7 +169,7 @@ const Projects = () => {
             </span>
           </motion.h3>
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

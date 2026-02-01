@@ -38,7 +38,7 @@ const Certifications = () => {
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-100/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+      <div className="relative max-w-5xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 safe-area-padding min-w-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ const Certifications = () => {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -93,7 +93,7 @@ const Certifications = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10">
-                <div className="flex items-start gap-4 mb-4">
+                <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4 flex-wrap">
                   {/* Image de la certification */}
                   <div className="flex-shrink-0 w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner border border-slate-100 overflow-hidden ring-1 ring-slate-200/50 group-hover:ring-primary/20 transition-all duration-300">
                     <img 
@@ -125,7 +125,7 @@ const Certifications = () => {
                   {cert.certsList.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-slate-600">
                       <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-primary/70"></span>
-                      <span className="text-sm md:text-base leading-relaxed">{item}</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -158,7 +158,7 @@ const Certifications = () => {
             <div className="max-w-3xl w-full p-3 sm:p-4 mx-4 sm:mx-0 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">
                 <div className="flex justify-end p-2">
-                  <button onClick={closeLightbox} className="text-gray-600 hover:text-gray-900">✕</button>
+                  <button onClick={closeLightbox} className="p-3 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 text-xl">✕</button>
                 </div>
                 <div className="p-4">
                   <img src={lightbox.src} alt={lightbox.alt} className="w-full h-auto object-contain" />

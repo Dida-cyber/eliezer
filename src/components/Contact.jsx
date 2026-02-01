@@ -18,7 +18,7 @@ const Contact = () => {
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 safe-area-padding">
+      <div className="relative z-10 max-w-5xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 safe-area-padding min-w-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 md:gap-8 mb-6 sm:mb-12">
           {/* Email Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -61,7 +61,7 @@ const Contact = () => {
             <h3 className="text-xl font-bold text-white text-center mb-4">Email</h3>
             <motion.a
               href={`mailto:${personalInfo.email}`}
-              className="block text-center text-blue-100 hover:text-white transition-colors text-lg"
+              className="block text-center text-blue-100 hover:text-white transition-colors text-sm sm:text-base md:text-lg break-all px-2"
               whileHover={{ scale: 1.05 }}
             >
               {personalInfo.email}
