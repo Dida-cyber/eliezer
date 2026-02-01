@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { certifications } from '../data/projects';
+import { ciscoImages, ciscoCertNames } from '../data/certificationImages';
 
 const Certifications = () => {
   const containerVariants = {
@@ -27,10 +28,42 @@ const Certifications = () => {
     "AI & Computer Vision": "from-purple-500 to-pink-500"
   };
 
-  // lightbox state pour afficher l'image en grand
-  const [lightbox, setLightbox] = useState({ open: false, src: '', alt: '' });
-  const openLightbox = (src, alt) => setLightbox({ open: true, src, alt });
-  const closeLightbox = () => setLightbox({ open: false, src: '', alt: '' });
+  // lightbox state pour afficher l'image en grand avec navigation
+  const [lightbox, setLightbox] = useState({ open: false, images: [], currentIndex: 0, alt: '', isGallery: false, titles: [] });
+  
+  // Image statique pour les autres certifications
+  const openStaticImage = (imageSrc, alt) => {
+    const base = import.meta.env.BASE_URL || '/';
+    const fullImageSrc = base + imageSrc.replace(/^\//, '');
+    setLightbox({ open: true, images: [fullImageSrc], currentIndex: 0, alt, isGallery: false, titles: [] });
+  };
+  
+  // Galerie spéciale pour Cisco avec ses 5 certifications
+  const openCiscoGallery = () => {
+    const base = import.meta.env.BASE_URL || '/';
+    const images = ciscoImages.map(img => base + img.replace(/^\//, ''));
+    setLightbox({ open: true, images, currentIndex: 0, alt: ciscoCertNames[0], isGallery: true, titles: ciscoCertNames });
+  };
+  
+  const closeLightbox = () => setLightbox({ open: false, images: [], currentIndex: 0, alt: '', isGallery: false, titles: [] });
+  const nextImage = () => {
+    if (lightbox.currentIndex < lightbox.images.length - 1) {
+      setLightbox(prev => ({ 
+        ...prev, 
+        currentIndex: prev.currentIndex + 1,
+        alt: prev.titles[prev.currentIndex + 1] || prev.alt
+      }));
+    }
+  };
+  const prevImage = () => {
+    if (lightbox.currentIndex > 0) {
+      setLightbox(prev => ({ 
+        ...prev, 
+        currentIndex: prev.currentIndex - 1,
+        alt: prev.titles[prev.currentIndex - 1] || prev.alt
+      }));
+    }
+  };
 
   return (
     <section id="certifications" className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
@@ -69,7 +102,7 @@ const Certifications = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -134,11 +167,11 @@ const Certifications = () => {
                 {cert.image && (
                   <div className="mt-5 pt-4 border-t border-slate-100">
                     <button
-                      onClick={() => openLightbox(imageSrc, cert.issuer)}
+                      onClick={() => cert.issuer === 'Cisco Networking Academy' ? openCiscoGallery() : openStaticImage(cert.image, cert.issuer)}
                       className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] bg-gradient-to-r from-primary to-accent hover:from-primaryDark hover:to-accent text-white rounded-xl font-medium shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 hover:scale-[1.02]"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                      View certificate
+                      View certificates
                     </button>
                   </div>
                 )}
@@ -157,11 +190,45 @@ const Certifications = () => {
         >
             <div className="max-w-3xl w-full p-3 sm:p-4 mx-4 sm:mx-0 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                <div className="flex justify-end p-2">
+                <div className="flex justify-between items-center p-4 border-b border-slate-200">
+                  <h3 className="text-lg font-semibold text-gray-800">{lightbox.alt}</h3>
                   <button onClick={closeLightbox} className="p-3 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 text-xl">✕</button>
                 </div>
-                <div className="p-4">
-                  <img src={lightbox.src} alt={lightbox.alt} className="w-full h-auto object-contain" />
+                <div className="p-4 relative">
+                  <img src={lightbox.images[lightbox.currentIndex]} alt={lightbox.alt} className="w-full h-auto object-contain" />
+                  
+                  {/* Compteur */}
+                  {lightbox.isGallery && (
+                    <div className="mt-4 text-center text-sm font-medium text-gray-600">
+                      {lightbox.currentIndex + 1} / {lightbox.images.length}
+                    </div>
+                  )}
+
+                  {/* Boutons de navigation */}
+                  {lightbox.isGallery && lightbox.images.length > 1 && (
+                    <div className="mt-6 flex gap-3 justify-center">
+                      <button
+                        onClick={prevImage}
+                        disabled={lightbox.currentIndex === 0}
+                        className="flex items-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 disabled:bg-slate-100 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-700 rounded-lg font-medium transition-all duration-300"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Previous
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        disabled={lightbox.currentIndex === lightbox.images.length - 1}
+                        className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primaryDark disabled:bg-slate-100 disabled:text-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-all duration-300"
+                      >
+                        Next
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
