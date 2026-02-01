@@ -33,16 +33,12 @@ const Certifications = () => {
   
   // Image statique pour les autres certifications
   const openStaticImage = (imageSrc, alt) => {
-    const base = import.meta.env.BASE_URL || '/';
-    const fullImageSrc = base + imageSrc.replace(/^\//, '');
-    setLightbox({ open: true, images: [fullImageSrc], currentIndex: 0, alt, isGallery: false, titles: [] });
+    setLightbox({ open: true, images: [imageSrc], currentIndex: 0, alt, isGallery: false, titles: [] });
   };
   
   // Galerie spéciale pour Cisco avec ses 5 certifications
   const openCiscoGallery = () => {
-    const base = import.meta.env.BASE_URL || '/';
-    const images = ciscoImages.map(img => base + img.replace(/^\//, ''));
-    setLightbox({ open: true, images, currentIndex: 0, alt: ciscoCertNames[0], isGallery: true, titles: ciscoCertNames });
+    setLightbox({ open: true, images: ciscoImages, currentIndex: 0, alt: ciscoCertNames[0], isGallery: true, titles: ciscoCertNames });
   };
   
   const closeLightbox = () => setLightbox({ open: false, images: [], currentIndex: 0, alt: '', isGallery: false, titles: [] });
@@ -109,8 +105,6 @@ const Certifications = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {certifications.map((cert, index) => {
-            const base = import.meta.env.BASE_URL || '/';
-            const imageSrc = base + cert.image.replace(/^\//, '');
             return (
             <motion.div
               key={cert.id}
@@ -130,7 +124,7 @@ const Certifications = () => {
                   {/* Image de la certification - plus grande sur mobile */}
                   <div className="w-24 h-24 sm:w-20 sm:h-20 flex-shrink-0 bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner border border-slate-100 overflow-hidden ring-1 ring-slate-200/50 group-hover:ring-primary/20 transition-all duration-300">
                     <img 
-                      src={imageSrc} 
+                      src={cert.image} 
                       alt={cert.issuer}
                       className="w-full h-full object-contain p-2"
                       onError={(e) => {
