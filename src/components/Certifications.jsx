@@ -126,9 +126,9 @@ const Certifications = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10">
-                <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4 flex-wrap">
-                  {/* Image de la certification */}
-                  <div className="flex-shrink-0 w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner border border-slate-100 overflow-hidden ring-1 ring-slate-200/50 group-hover:ring-primary/20 transition-all duration-300">
+                <div className="flex flex-col xs:flex-row items-start gap-4 mb-4">
+                  {/* Image de la certification - plus grande sur mobile */}
+                  <div className="flex-shrink-0 w-24 h-24 xs:w-20 xs:h-20 sm:w-[4.5rem] sm:h-[4.5rem] bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner border border-slate-100 overflow-hidden ring-1 ring-slate-200/50 group-hover:ring-primary/20 transition-all duration-300">
                     <img 
                       src={imageSrc} 
                       alt={cert.issuer}
