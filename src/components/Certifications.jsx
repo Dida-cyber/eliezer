@@ -179,51 +179,51 @@ const Certifications = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" 
           onClick={closeLightbox}
         >
-            <div className="max-w-3xl w-full p-3 sm:p-4 mx-4 sm:mx-0 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-              <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-                <div className="flex justify-between items-center p-4 border-b border-slate-200">
-                  <h3 className="text-lg font-semibold text-gray-800">{lightbox.alt}</h3>
-                  <button onClick={closeLightbox} className="p-3 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 text-xl">✕</button>
-                </div>
-                <div className="p-4 relative">
-                  <img src={lightbox.images[lightbox.currentIndex]} alt={lightbox.alt} className="w-full h-auto object-contain" />
-                  
-                  {/* Compteur */}
-                  {lightbox.isGallery && (
-                    <div className="mt-4 text-center text-sm font-medium text-gray-600">
-                      {lightbox.currentIndex + 1} / {lightbox.images.length}
-                    </div>
-                  )}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto flex flex-col" onClick={(e) => e.stopPropagation()}>
+              <div className="flex justify-between items-center p-4 border-b border-slate-200 flex-shrink-0">
+                <h3 className="text-lg font-semibold text-gray-800">{lightbox.alt}</h3>
+                <button onClick={closeLightbox} className="p-3 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 text-xl">✕</button>
+              </div>
+              <div className="p-4 relative flex-shrink-0 overflow-hidden">
+                <img src={lightbox.images[lightbox.currentIndex]} alt={lightbox.alt} className="w-full h-auto max-h-[50vh] object-contain" />
+              </div>
 
-                  {/* Boutons de navigation */}
-                  {lightbox.isGallery && lightbox.images.length > 1 && (
-                    <div className="mt-6 flex gap-3 justify-center">
-                      <button
-                        onClick={prevImage}
-                        disabled={lightbox.currentIndex === 0}
-                        className="flex items-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 disabled:bg-slate-100 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-700 rounded-lg font-medium transition-all duration-300"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                        Previous
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        disabled={lightbox.currentIndex === lightbox.images.length - 1}
-                        className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primaryDark disabled:bg-slate-100 disabled:text-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-all duration-300"
-                      >
-                        Next
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                  )}
-                </div>
+              {/* Compteur et Boutons */}
+              <div className="flex-1 flex flex-col justify-center p-4 border-t border-slate-200">
+                {lightbox.isGallery && (
+                  <div className="text-center text-sm font-medium text-gray-600 mb-4">
+                    {lightbox.currentIndex + 1} / {lightbox.images.length}
+                  </div>
+                )}
+
+                {/* Boutons de navigation */}
+                {lightbox.isGallery && lightbox.images.length > 1 && (
+                  <div className="flex gap-3 justify-center">
+                    <button
+                      onClick={prevImage}
+                      disabled={lightbox.currentIndex === 0}
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 disabled:bg-slate-100 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-700 rounded-lg font-medium transition-all duration-300"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Previous
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      disabled={lightbox.currentIndex === lightbox.images.length - 1}
+                      className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primaryDark disabled:bg-slate-100 disabled:text-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-all duration-300"
+                    >
+                      Next
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
